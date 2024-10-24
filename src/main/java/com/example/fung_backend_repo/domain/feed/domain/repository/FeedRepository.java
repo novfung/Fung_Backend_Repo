@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface FeedRepository extends CrudRepository<Feed, Long> {
 
-    Optional<Feed> findById(String feedId);
+    Optional<Feed> findById(Long feedId);
 }

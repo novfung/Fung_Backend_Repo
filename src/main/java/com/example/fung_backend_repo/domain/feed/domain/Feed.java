@@ -1,9 +1,7 @@
 package com.example.fung_backend_repo.domain.feed.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.example.fung_backend_repo.domain.user.domain.User;
+import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
@@ -22,12 +20,22 @@ public class Feed {
 
     private String content;
 
-    private String image_url;
+    private String imageUrl;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
 
     @Builder
-    public Feed(String title, String content, String image_url) {
+    public Feed(String title, String content, String imageUrl) {
         this.title = title;
         this.content = content;
-        this.image_url = image_url;
+        this.imageUrl = imageUrl;
+    }
+
+    public void feedUpdate(String title, String content, String image_url){
+        this.title = title;
+        this.content = content;
+        this.imageUrl = image_url;
     }
 }
