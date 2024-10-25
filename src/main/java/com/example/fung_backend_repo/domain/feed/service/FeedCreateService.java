@@ -24,6 +24,7 @@ public class FeedCreateService {
                         .title(feedCreateRequest.getTitle())
                         .content(feedCreateRequest.getContent())
                         .imageUrl(feedCreateRequest.getImage_url())
+                        .user(user)
                         .build()
         );
     }

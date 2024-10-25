@@ -27,10 +27,11 @@ public class Feed {
     private User user;
 
     @Builder
-    public Feed(String title, String content, String imageUrl) {
+    public Feed(String title, String content, String imageUrl, User user) {
         this.title = title;
         this.content = content;
         this.imageUrl = imageUrl;
+        this.user = user;
     }
 
     public void feedUpdate(String title, String content, String image_url){
