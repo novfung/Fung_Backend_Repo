@@ -15,6 +15,7 @@ public enum ErrorCode {
 
     USER_NOT_FOUND(404, "User Not Found"),
     FEED_NOT_FOUND(404, "Feed Not Found"),
+    COMMENT_NOT_FOUND(404, "Comment Not Found"),
 
     USER_ALREADY_EXIST(409, "User Already Exist"),
 
