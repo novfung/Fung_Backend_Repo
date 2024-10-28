@@ -21,10 +21,13 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    private String gender;
+
     @Builder
-    private User(String accountId, String password) {
+    private User(String accountId, String password, String gender, String imageUrl) {
         this.accountId = accountId;
         this.password = password;
+        this.gender = gender;
     }
 
     public void updatePassword (String password) {

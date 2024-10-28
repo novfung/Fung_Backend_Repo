@@ -25,6 +25,7 @@ public class UserSignUpService {
         }
 
         userRepository.save(User.builder()
+                .gender(request.getGender())
                 .accountId(request.getAccountId())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build());
