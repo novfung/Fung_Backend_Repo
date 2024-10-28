@@ -1,4 +1,4 @@
-package com.example.fung_backend_repo.domain.comment;
+package com.example.fung_backend_repo.domain.comment.facade;
 
 import com.example.fung_backend_repo.domain.comment.domain.Comment;
 import com.example.fung_backend_repo.domain.comment.domain.repository.CommentRepository;
