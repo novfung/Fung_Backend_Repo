@@ -26,12 +26,11 @@ public class CreateCommentService {
     public void execute(CreateCommentRequest request, Long feedId) {
         User user = userFacade.getCurrentUser();
         Feed feed = feedFacade.getFeedById(feedId);
-        LocalDateTime createTime = LocalDateTime.now();
 
         commentRepository.save(
                 Comment.builder()
                         .content(request.getContent())
-                        .createTime(createTime)
+                        .createTime(LocalDateTime.now())
                         .user(user)
                         .feed(feed)
                         .build()
