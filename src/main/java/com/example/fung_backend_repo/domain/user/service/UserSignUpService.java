@@ -28,6 +28,9 @@ public class UserSignUpService {
                 .gender(request.getGender())
                 .accountId(request.getAccountId())
                 .password(passwordEncoder.encode(request.getPassword()))
+                .interest(request.getInterest())
+                .imageUrl(request.getImageUrl())
+                .birth(request.getBirth())
                 .build());
     }
 }
