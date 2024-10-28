@@ -10,6 +10,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDateTime;
+
 @RequiredArgsConstructor
 @Service
 public class FeedCreateService {
@@ -24,6 +26,7 @@ public class FeedCreateService {
                         .title(feedCreateRequest.getTitle())
                         .content(feedCreateRequest.getContent())
                         .imageUrl(feedCreateRequest.getImage_url())
+                        .createTime(LocalDateTime.now())
                         .user(user)
                         .build()
         );
