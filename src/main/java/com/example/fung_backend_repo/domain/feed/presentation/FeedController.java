@@ -1,8 +1,8 @@
 package com.example.fung_backend_repo.domain.feed.presentation;
 
 
-import com.example.fung_backend_repo.domain.feed.presentation.request.FeedCreateRequest;
-import com.example.fung_backend_repo.domain.feed.presentation.request.FeedUpdateRequest;
+import com.example.fung_backend_repo.domain.feed.presentation.dto.request.FeedCreateRequest;
+import com.example.fung_backend_repo.domain.feed.presentation.dto.request.FeedUpdateRequest;
 import com.example.fung_backend_repo.domain.feed.service.FeedCreateService;
 import com.example.fung_backend_repo.domain.feed.service.FeedDeleteService;
 import com.example.fung_backend_repo.domain.feed.service.FeedUpdateService;

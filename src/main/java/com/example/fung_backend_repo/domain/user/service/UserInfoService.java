@@ -3,21 +3,27 @@ package com.example.fung_backend_repo.domain.user.service;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.domain.repository.UserRepository;
 import com.example.fung_backend_repo.domain.user.facade.UserFacade;
-import com.example.fung_backend_repo.domain.user.presentation.dto.request.ChangeBirthRequest;
+import com.example.fung_backend_repo.domain.user.presentation.dto.response.UserInfoResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-public class ChangeBirthService {
+public class UserInfoService {
 
     private final UserRepository userRepository;
     private final UserFacade userFacade;
 
-    public void updateBirth(ChangeBirthRequest request) {
+    @Transactional
+    public UserInfoResponse execute() {
         User user = userFacade.getCurrentUser();
-        user.updateBirth(request.getBirth());
 
-        userRepository.save(user);
+        return UserInfoResponse.builder()
+                .birth(user.getBirth())
+                .accountId(user.getAccountId())
+                .interest(user.getInterest())
+                .build();
     }
 }
+

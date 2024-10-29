@@ -3,7 +3,7 @@ package com.example.fung_backend_repo.domain.feed.service;
 
 import com.example.fung_backend_repo.domain.feed.domain.Feed;
 import com.example.fung_backend_repo.domain.feed.domain.repository.FeedRepository;
-import com.example.fung_backend_repo.domain.feed.presentation.request.FeedCreateRequest;
+import com.example.fung_backend_repo.domain.feed.presentation.dto.request.FeedCreateRequest;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;

@@ -1,7 +1,8 @@
 package com.example.fung_backend_repo.domain.user.presentation;
 
 import com.example.fung_backend_repo.domain.auth.presentation.response.TokenResponse;
-import com.example.fung_backend_repo.domain.user.presentation.request.*;
+import com.example.fung_backend_repo.domain.user.presentation.dto.request.*;
+import com.example.fung_backend_repo.domain.user.presentation.dto.response.UserInfoResponse;
 import com.example.fung_backend_repo.domain.user.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,7 @@ public class UserController {
     private final ChangeAccountIdService changeAccountIdService;
     private final ChangeInterestService changeInterestService;
     private final ChangeBirthService changeBirthService;
+    private final UserInfoService userInfoService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
@@ -55,5 +57,12 @@ public class UserController {
     public void changeBirth(@RequestBody @Valid ChangeBirthRequest request) {
         changeBirthService.updateBirth(request);
     }
+
+
+    @GetMapping("/user")
+    public UserInfoResponse userInfo(){
+        return userInfoService.execute();
+    }
+
 }
 

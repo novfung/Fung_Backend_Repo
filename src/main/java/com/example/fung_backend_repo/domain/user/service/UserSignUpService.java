@@ -3,7 +3,7 @@ package com.example.fung_backend_repo.domain.user.service;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.domain.repository.UserRepository;
 import com.example.fung_backend_repo.domain.user.exception.UserAlreadyExistException;
-import com.example.fung_backend_repo.domain.user.presentation.request.UserSignUpRequest;
+import com.example.fung_backend_repo.domain.user.presentation.dto.request.UserSignUpRequest;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

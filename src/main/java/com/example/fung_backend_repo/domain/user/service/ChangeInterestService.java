@@ -3,7 +3,7 @@ package com.example.fung_backend_repo.domain.user.service;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.domain.repository.UserRepository;
 import com.example.fung_backend_repo.domain.user.facade.UserFacade;
-import com.example.fung_backend_repo.domain.user.presentation.request.ChangeInterestRequest;
+import com.example.fung_backend_repo.domain.user.presentation.dto.request.ChangeInterestRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
