@@ -21,8 +21,8 @@ public class UserInfoService {
 
         return UserInfoResponse.builder()
                 .birth(user.getBirth())
-                .accountId(execute().getAccountId())
-                .interest(execute().getInterest())
+                .accountId(user.getAccountId())
+                .interest(user.getInterest())
                 .build();
     }
 }

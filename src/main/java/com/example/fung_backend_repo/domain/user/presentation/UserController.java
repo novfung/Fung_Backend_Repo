@@ -61,7 +61,6 @@ public class UserController {
 
     @GetMapping("/user")
     public UserInfoResponse userInfo(){
-
         return userInfoService.execute();
     }
 
