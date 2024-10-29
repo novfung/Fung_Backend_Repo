@@ -5,7 +5,7 @@ import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.domain.repository.UserRepository;
 import com.example.fung_backend_repo.domain.user.exception.PasswordMismatchException;
 import com.example.fung_backend_repo.domain.user.exception.UserNotFoundException;
-import com.example.fung_backend_repo.domain.user.presentation.request.UserSignInRequest;
+import com.example.fung_backend_repo.domain.user.presentation.dto.request.UserSignInRequest;
 import com.example.fung_backend_repo.global.security.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;

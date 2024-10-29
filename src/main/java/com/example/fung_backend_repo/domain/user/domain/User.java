@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -21,10 +23,23 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    private String gender;
+
+    @Column(length = 30)
+    private String interest;
+
+    private LocalDate birth;
+
+    private String imageUrl;
+
     @Builder
-    private User(String accountId, String password) {
+    private User(String accountId, String password, String gender, String imageUrl, String interest, LocalDate birth) {
         this.accountId = accountId;
         this.password = password;
+        this.gender = gender;
+        this.interest = interest;
+        this.imageUrl = imageUrl;
+        this.birth = birth;
     }
 
     public void updatePassword (String password) {
@@ -33,5 +48,13 @@ public class User {
 
     public void updateAccountId(String accountId) {
         this.accountId = accountId;
+    }
+
+    public void updateBirth(LocalDate birth) {
+        this.birth = birth;
+    }
+
+    public void updateInterest(String interest) {
+        this.interest = interest;
     }
 }

@@ -3,12 +3,14 @@ package com.example.fung_backend_repo.domain.feed.service;
 
 import com.example.fung_backend_repo.domain.feed.domain.Feed;
 import com.example.fung_backend_repo.domain.feed.domain.repository.FeedRepository;
-import com.example.fung_backend_repo.domain.feed.presentation.request.FeedCreateRequest;
+import com.example.fung_backend_repo.domain.feed.presentation.dto.request.FeedCreateRequest;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.time.LocalDateTime;
 
 @RequiredArgsConstructor
 @Service
@@ -24,6 +26,7 @@ public class FeedCreateService {
                         .title(feedCreateRequest.getTitle())
                         .content(feedCreateRequest.getContent())
                         .imageUrl(feedCreateRequest.getImage_url())
+                        .createTime(LocalDateTime.now())
                         .user(user)
                         .build()
         );

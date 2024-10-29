@@ -1,14 +1,9 @@
 package com.example.fung_backend_repo.domain.user.presentation;
 
 import com.example.fung_backend_repo.domain.auth.presentation.response.TokenResponse;
-import com.example.fung_backend_repo.domain.user.presentation.request.ChangeAccountIdRequest;
-import com.example.fung_backend_repo.domain.user.presentation.request.ChangePasswordRequest;
-import com.example.fung_backend_repo.domain.user.presentation.request.UserSignInRequest;
-import com.example.fung_backend_repo.domain.user.presentation.request.UserSignUpRequest;
-import com.example.fung_backend_repo.domain.user.service.ChangeAccountIdService;
-import com.example.fung_backend_repo.domain.user.service.ChangePasswordService;
-import com.example.fung_backend_repo.domain.user.service.UserSignInService;
-import com.example.fung_backend_repo.domain.user.service.UserSignUpService;
+import com.example.fung_backend_repo.domain.user.presentation.dto.request.*;
+import com.example.fung_backend_repo.domain.user.presentation.dto.response.UserInfoResponse;
+import com.example.fung_backend_repo.domain.user.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -23,6 +18,9 @@ public class UserController {
     private final UserSignInService userSignInService;
     private final ChangePasswordService changePasswordService;
     private final ChangeAccountIdService changeAccountIdService;
+    private final ChangeInterestService changeInterestService;
+    private final ChangeBirthService changeBirthService;
+    private final UserInfoService userInfoService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/signup")
@@ -47,5 +45,24 @@ public class UserController {
     public void changeAccountId(@RequestBody @Valid ChangeAccountIdRequest request) {
         changeAccountIdService.updateAccountId(request);
     }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PatchMapping("/interest")
+    public void changeInterest(@RequestBody @Valid ChangeInterestRequest request) {
+        changeInterestService.updateInterest(request);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @PatchMapping("/birth")
+    public void changeBirth(@RequestBody @Valid ChangeBirthRequest request) {
+        changeBirthService.updateBirth(request);
+    }
+
+
+    @GetMapping("/user")
+    public UserInfoResponse userInfo(){
+        return userInfoService.execute();
+    }
+
 }
 
