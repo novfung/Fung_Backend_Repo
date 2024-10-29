@@ -4,7 +4,7 @@ package com.example.fung_backend_repo.domain.feed.service;
 import com.example.fung_backend_repo.domain.feed.domain.Feed;
 import com.example.fung_backend_repo.domain.feed.exception.FeedCannotBeModifyException;
 import com.example.fung_backend_repo.domain.feed.facade.FeedFacade;
-import com.example.fung_backend_repo.domain.feed.presentation.request.FeedUpdateRequest;
+import com.example.fung_backend_repo.domain.feed.presentation.dto.request.FeedUpdateRequest;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;

@@ -1,4 +1,4 @@
-package com.example.fung_backend_repo.domain.feed.presentation.request;
+package com.example.fung_backend_repo.domain.feed.presentation.dto.request;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
