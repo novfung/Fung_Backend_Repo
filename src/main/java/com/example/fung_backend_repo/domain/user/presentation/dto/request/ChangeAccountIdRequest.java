@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Getter
 @NoArgsConstructor
-public class ChangeNameRequest {
+public class ChangeAccountIdRequest {
 
-    private String name;
+    private String accountId;
 }
