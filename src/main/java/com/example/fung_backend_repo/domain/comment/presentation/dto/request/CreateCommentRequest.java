@@ -1,4 +1,4 @@
-package com.example.fung_backend_repo.domain.comment.presentation.request;
+package com.example.fung_backend_repo.domain.comment.presentation.dto.request;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;

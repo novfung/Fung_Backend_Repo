@@ -1,7 +1,7 @@
 package com.example.fung_backend_repo.domain.comment.presentation;
 
-import com.example.fung_backend_repo.domain.comment.presentation.request.CreateCommentRequest;
-import com.example.fung_backend_repo.domain.comment.presentation.request.UpdateCommentRequest;
+import com.example.fung_backend_repo.domain.comment.presentation.dto.request.CreateCommentRequest;
+import com.example.fung_backend_repo.domain.comment.presentation.dto.request.UpdateCommentRequest;
 import com.example.fung_backend_repo.domain.comment.service.CreateCommentService;
 import com.example.fung_backend_repo.domain.comment.service.DeleteCommentService;
 import com.example.fung_backend_repo.domain.comment.service.UpdateCommentService;

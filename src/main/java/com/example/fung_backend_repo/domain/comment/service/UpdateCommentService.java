@@ -3,7 +3,7 @@ package com.example.fung_backend_repo.domain.comment.service;
 import com.example.fung_backend_repo.domain.comment.facade.CommentFacade;
 import com.example.fung_backend_repo.domain.comment.domain.Comment;
 import com.example.fung_backend_repo.domain.comment.exception.CommentNotFoundException;
-import com.example.fung_backend_repo.domain.comment.presentation.request.UpdateCommentRequest;
+import com.example.fung_backend_repo.domain.comment.presentation.dto.request.UpdateCommentRequest;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
