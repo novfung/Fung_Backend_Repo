@@ -7,6 +7,8 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -22,15 +24,18 @@ public class Feed {
 
     private String imageUrl;
 
+    private LocalDateTime createTime;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
     @Builder
-    public Feed(String title, String content, String imageUrl, User user) {
+    public Feed(String title, String content, String imageUrl, LocalDateTime createTime, User user) {
         this.title = title;
         this.content = content;
         this.imageUrl = imageUrl;
+        this.createTime = createTime;
         this.user = user;
     }
 

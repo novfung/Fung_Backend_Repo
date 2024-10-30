@@ -3,7 +3,7 @@ package com.example.fung_backend_repo.domain.user.service;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import com.example.fung_backend_repo.domain.user.domain.repository.UserRepository;
 import com.example.fung_backend_repo.domain.user.facade.UserFacade;
-import com.example.fung_backend_repo.domain.user.presentation.request.ChangePasswordRequest;
+import com.example.fung_backend_repo.domain.user.presentation.dto.request.ChangePasswordRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
