@@ -21,7 +21,7 @@ public class FeedCreateService {
     @Transactional
     public void  execute(FeedCreateRequest feedCreateRequest){
         User user = userFacade.getCurrentUser();
-        Feed feed = feedRepository.save(
+        feedRepository.save(
                 Feed.builder()
                         .title(feedCreateRequest.getTitle())
                         .content(feedCreateRequest.getContent())

@@ -18,6 +18,8 @@ public class Feed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private String accountId;
+
     private String title;
 
     private String content;
@@ -37,6 +39,7 @@ public class Feed {
         this.imageUrl = imageUrl;
         this.createTime = createTime;
         this.user = user;
+        this.accountId = user.getAccountId();
     }
 
     public void feedUpdate(String title, String content, String image_url){

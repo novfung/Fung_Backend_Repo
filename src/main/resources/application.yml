@@ -4,7 +4,9 @@ spring:
     url: ${MYSQL_URL}
     username: ${MYSQL_USERNAME}
     password: ${MYSQL_PASSWORD}
-
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
@@ -61,3 +63,6 @@ logging:
       amazonaws:
         util:
           EC2MetadataUtils: error
+server:
+  address: 0.0.0.0
+  port: 8080

@@ -5,10 +5,13 @@ import com.example.fung_backend_repo.domain.comment.presentation.dto.request.Upd
 import com.example.fung_backend_repo.domain.comment.service.CreateCommentService;
 import com.example.fung_backend_repo.domain.comment.service.DeleteCommentService;
 import com.example.fung_backend_repo.domain.comment.service.UpdateCommentService;
+import com.example.fung_backend_repo.domain.feed.presentation.dto.response.FeedResponse;
+import com.example.fung_backend_repo.domain.feed.service.QueryFeedService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
+
 
 @RequestMapping("/comment")
 @RestController
@@ -18,6 +21,7 @@ public class CommentController {
     private final CreateCommentService createCommentService;
     private final UpdateCommentService updateCommentService;
     private final DeleteCommentService deleteCommentService;
+    private final QueryFeedService queryFeedService;
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/{feed-id}")
@@ -35,5 +39,11 @@ public class CommentController {
     @DeleteMapping("/{comment-id}")
     public void deleteComment(@PathVariable("comment-id") Long commentId) {
         deleteCommentService.execute(commentId);
+    }
+
+    @ResponseStatus(HttpStatus.OK)
+    @GetMapping("/{feed-id}")
+    public FeedResponse getComment(@PathVariable("feed-id") Long feedId) {
+        return queryFeedService.execute(feedId);
     }
 }

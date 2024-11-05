@@ -23,8 +23,6 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    private String gender;
-
     @Column(length = 30)
     private String interest;
 
@@ -33,10 +31,9 @@ public class User {
     private String imageUrl;
 
     @Builder
-    private User(String accountId, String password, String gender, String imageUrl, String interest, LocalDate birth) {
+    private User(String accountId, String password, String imageUrl, String interest, LocalDate birth) {
         this.accountId = accountId;
         this.password = password;
-        this.gender = gender;
         this.interest = interest;
         this.imageUrl = imageUrl;
         this.birth = birth;
