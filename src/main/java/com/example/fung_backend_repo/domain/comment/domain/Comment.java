@@ -1,5 +1,6 @@
-package com.example.fung_backend_repo.domain.feed.domain;
+package com.example.fung_backend_repo.domain.comment.domain;
 
+import com.example.fung_backend_repo.domain.feed.domain.Feed;
 import com.example.fung_backend_repo.domain.user.domain.User;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
@@ -12,39 +13,34 @@ import java.time.LocalDateTime;
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class Feed {
+public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String accountId;
-
-    private String title;
-
+    @Column(length = 50)
     private String content;
-
-    private String imageUrl;
 
     private LocalDateTime createTime;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "feed_id", nullable = false)
+    private Feed feed;
+
     @Builder
-    public Feed(String title, String content, String imageUrl, LocalDateTime createTime, User user) {
-        this.title = title;
+    public Comment(String content, LocalDateTime createTime, User user, Feed feed) {
         this.content = content;
-        this.imageUrl = imageUrl;
         this.createTime = createTime;
         this.user = user;
-        this.accountId = user.getAccountId();
+        this.feed = feed;
     }
 
-    public void feedUpdate(String title, String content, String image_url){
-        this.title = title;
+    public void updateComment(String content) {
         this.content = content;
-        this.imageUrl = image_url;
     }
 }

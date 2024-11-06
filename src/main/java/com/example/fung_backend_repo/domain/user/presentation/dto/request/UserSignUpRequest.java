@@ -13,8 +13,6 @@ public class UserSignUpRequest {
 
     private String password;
 
-    private String gender;
-
     private String interest;
 
     private String imageUrl;

@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 @RequiredArgsConstructor
 public class UserInfoService {
 
-    private final UserRepository userRepository;
     private final UserFacade userFacade;
 
     @Transactional

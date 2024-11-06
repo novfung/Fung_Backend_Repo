@@ -4,7 +4,9 @@ spring:
     url: ${MYSQL_URL}
     username: ${MYSQL_USERNAME}
     password: ${MYSQL_PASSWORD}
-
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
   jpa:
     database: mysql
     database-platform: org.hibernate.dialect.MySQL8Dialect
@@ -42,18 +44,18 @@ jwt:
   header: ${HEADER}
   prefix: ${PREFIX}
 
-#cloud:
-#  aws:
-#    s3:
-#      bucket: ${AWS_S3_BUCKET}
-#    credentials:
-#      access-key: ${AWS_S3_ACCESS}
-#      secret-key: ${AWS_S3_SECRET}
-#    region:
-#      static: ap-northeast-2
-#      auto: false
-#    stack:
-#      auto: false
+cloud:
+  aws:
+    s3:
+      bucket: ${AWS_S3_BUCKET}
+    credentials:
+      access-key: ${AWS_S3_ACCESS}
+      secret-key: ${AWS_S3_SECRET}
+    region:
+      static: ap-northeast-2
+      auto: false
+    stack:
+      auto: false
 
 logging:
   level:
@@ -61,3 +63,6 @@ logging:
       amazonaws:
         util:
           EC2MetadataUtils: error
+server:
+  address: 0.0.0.0
+  port: 8080
