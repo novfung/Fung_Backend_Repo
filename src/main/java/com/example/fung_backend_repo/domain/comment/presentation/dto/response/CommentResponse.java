@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 @AllArgsConstructor
 public class CommentResponse {
-    
+
     private final String accountId;
 
     private final String content;
