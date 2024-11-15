@@ -18,4 +18,6 @@ public class UserSignUpRequest {
     private String imageUrl;
 
     private LocalDate birth;
+
+    private String gender;
 }
